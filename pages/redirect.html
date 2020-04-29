@@ -5,39 +5,27 @@
 <style>
 @import url('https://fonts.googleapis.com/css?family=Bree Serif');
 @import url('https://fonts.googleapis.com/css?family=Source Sans Pro');
+  :root {
+    ---body-bg-color:hsl(224, 73%, 93%);
+    ---body-border-color:hsl(0, 0%, 100%);
+    ---body-text-color:hsl(0, 0%, 30%);
+    ---link-color:hsl(224, 73%, 33%);
+    ---link-hover-color:hsl(348, 100%, 61%);
+    ---h1-color:hsl(348, 100%, 58%);
+    ---blob1-color: hsl(224, 73%, 83%);
+    ---blob2-color:hsl(348, 100%, 95%);
+    ---blob3-outline-color:hsl(348, 100%, 81%);
+  }
 * {
-  margin:0px;
-  padding:0px;
   top:0px;
   left:0px;
-}
-body {
-    color:hsl(0, 0%, 30%);
-    background:hsl(224, 73%, 93%);
-    font:36px Source Sans Pro;
-    line-height:calc(36px+10px);
-    height:100vh;
-   overflow:hidden;
-}
-.tmblr-iframe {
-    display:none;
-}
-h1 {
-    font:72px Bree Serif;
-    line-height:82px;
-    font-weight:bold;
-    color:hsl(348, 100%, 58%);
-}
-a {
-  color:hsl(224, 73%, 33%);
-}
-a:hover {
-  color:hsl(348, 100%, 61%);
+  margin:0px;
+  padding:0px;
 }
 body:before, body:after {
     content: "";
     position: fixed;
-    background: hsl(0, 0%, 100%);
+    background: var(---body-border-color);
     left: 0;
     right: 0;
     height: 20px;
@@ -49,8 +37,31 @@ body:after {
     bottom: 0;
 }
 body {
-    border-left: 20px solid hsl(0, 0%, 100%);
-    border-right: 20px solid hsl(0, 0%, 100%); 
+    border-left: 20px solid var(---body-border-color);
+    border-right: 20px solid var(---body-border-color); 
+}
+body {
+    background:var(---body-bg-color);
+    color:var( ---body-text-color);
+    height:100vh;
+    overflow:hidden;
+    font:36px Source Sans Pro;
+    line-height:calc(36px+10px);
+}
+.tmblr-iframe {
+    display:none;
+}
+ a {
+  color:var(---link-color);
+}
+a:hover {
+  color:var(---link-hover-color);
+}
+h1 {
+    font:72px Bree Serif;
+    line-height:82px;
+    font-weight:bold;
+    color:var(---h1-color);
 }
 .blobbackground {
   top:0px;
@@ -68,7 +79,7 @@ body {
   top: 0px;
   left: 0px;
   position: absolute;
-  fill: hsl(224, 73%, 83%);
+  fill: var(---blob1-color);
   width: 20vmax;
   animation: move 7s ease-in-out infinite;
   transform-origin: 50% 50%;
@@ -76,13 +87,13 @@ body {
 .blob2 {
   animation: move 15s ease-in-out infinite;
   width: 40vmax;
-  fill:hsl(348, 100%, 95%);
+  fill:var(---blob2-color);
 }
 .blob3 {
   animation: move 10s ease-in-out infinite;
   width: 30vmax;
-  stroke:hsl(348, 100%, 81%);
   fill:none;
+  stroke:var(---blob3-outline-color);
   stroke-width: 3px;
   stroke-dasharray: 2,2;
 }
@@ -97,10 +108,9 @@ body {
 main {
   top:0px;
   left:0px;
+  margin:0 auto;
   padding-top:15%;
   width:70%;
-  margin:0 auto;
-  vertical-align: middle;
   position:relative;
   z-index:30;
 }
