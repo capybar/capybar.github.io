@@ -2,6 +2,7 @@
 Photo: https://unsplash.com/photos/ai3MIbpajnI
 Fonts: Google fonts (Roboto & Pacifico)
 **/
+/***root styles**/
 @import url("https://fonts.googleapis.com/css2?family=Arvo:ital@0;1&family=Roboto:ital,wght@0,300;0,500;0,900;1,100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 :root {
@@ -16,6 +17,12 @@ Fonts: Google fonts (Roboto & Pacifico)
   --main-bg-color: #daa89b;
   --footer-bg-color: #a9d2d5;
   --font-family: "Roboto", sans-serif;
+}
+/***Universal Styles***/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    }
 }
 html,
 body {
@@ -88,6 +95,7 @@ svg {
   background: var(--accent-color);
   box-shadow: 6px 6px var(--link-color);
 }
+/***Nav***/
 nav {
   top: 0;
   position: absolute;
@@ -100,6 +108,7 @@ nav ul {
 nav ul li {
   display: inline-block;
 }
+/***header***/
 header {
   color: var(--header-p-text-color);
   font-family: var(--font-family-title);
@@ -118,6 +127,7 @@ header h1 {
     18px 13px var(--accent-color), 19px 14px var(--accent-color),
     20px 15px var(--accent-color);
 }
+/***Main***/
 main {
   width: 90vw;
   margin: 0 auto;
@@ -203,6 +213,7 @@ blockquote strong:before {
   padding: 4%;
   background: var(--accent-color-2);
 }
+/***Aside***/
 #styles,
 .profile {
   margin: 5%;
@@ -228,6 +239,7 @@ blockquote strong:before {
   border: 4px solid var(--body-text-color);
   background: 8px 8px var(--accent-color-2);
 }
+/***Footer***/
 .page-footer:before {
   width: 100%;
   height: 300px;
